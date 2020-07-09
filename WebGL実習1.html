@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>第一回課題</title>
+<!-- three.jsを読み込む(ローカル) -->
+<!-- <script src="./three.js"></script> -->
+<!-- three.jsを読み込む(CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+</head>
+<body>
+<script>
+var init = function() {
+// レンダラーを作成
+var renderer = new THREE.WebGLRenderer();
+// レンダラーのサイズを設定
+renderer.setSize(800, 600);
+// canvasをbodyに追加
+document.body.appendChild(renderer.domElement);
+// シーンを作成
+var scene = new THREE.Scene();
+// カメラを作成
+var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
+// オブジェクトの作成
+//箱
+var geometry = new THREE.BoxGeometry(1, 1, 1);
+var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+var box = new THREE.Mesh(geometry, material);
+box.position.z = -5;
+scene.add(box);
+//ドーナツ2つ
+var torusGeometry1 = new THREE.TorusGeometry( 0.5, 0.2, 6, 12 ); 
+var torusMaterial1 = new THREE. MeshPhongMaterial( { color: 0x006400,wireframe: true } );
+var torus1 = new THREE.Mesh( torusGeometry1, torusMaterial1 );
+torus1.position.set( 1.5, 0.8, -5);
+scene.add( torus1 );
+var torusGeometry2 = new THREE.TorusGeometry( 0.5, 0.2, 6, 12 ); 
+var torusMaterial2 = new THREE. MeshPhongMaterial( { color: 0x4b0082,wireframe: true } );
+var torus2 = new THREE.Mesh( torusGeometry2, torusMaterial2 );
+torus2.position.set( 1.5, 0.8, -5);
+scene.add( torus2 );
+
+//球
+var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 ); 
+var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0xf0f8ff,wireframe: true} );
+var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+sphere.position.set( -1.5, -0.8, -5 );
+scene.add( sphere );
+
+// ライト
+var light1 = new THREE.DirectionalLight(0xffffff);
+var light2 = new THREE.DirectionalLight(0xffffff);
+
+light1.position.set(1, 1, 1);
+scene.add(light1);
+light2.position.set(-1, -1, 1);
+scene.add(light2);
+// 描画
+renderer.render(scene, camera);
+// 初回実行
+var update = function() {
+requestAnimationFrame(update);
+// オブジェクトを回転させる
+box.rotation.x += 0.01;
+box.rotation.y += 0.01;
+torus1.rotation.x += 0.05;
+torus1.rotation.y += 0.01;
+torus2.rotation.x += 0.01;
+torus2.rotation.y += 0.05;
+sphere .rotation.x += 0.01;
+sphere .rotation.y += 0.01;
+renderer.render(scene, camera);
+};
+update();
+}
+window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
