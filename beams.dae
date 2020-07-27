@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.82.7 commit date:2020-03-12, commit time:05:06, hash:375c7dc4caf4</authoring_tool>
     </contributor>
-    <created>2020-07-26T21:26:24</created>
-    <modified>2020-07-26T21:26:24</modified>
+    <created>2020-07-27T12:50:14</created>
+    <modified>2020-07-27T12:50:14</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -31,50 +31,6 @@
       </extra>
     </camera>
   </library_cameras>
-  <library_lights>
-    <light id="ポイント-light" name="ポイント.002">
-      <technique_common>
-        <point>
-          <color sid="color">2000 2000 2000</color>
-          <constant_attenuation>1</constant_attenuation>
-          <linear_attenuation>0</linear_attenuation>
-          <quadratic_attenuation>0.001599967</quadratic_attenuation>
-        </point>
-      </technique_common>
-      <extra>
-        <technique profile="blender">
-          <type sid="type" type="int">0</type>
-          <flag sid="flag" type="int">0</flag>
-          <mode sid="mode" type="int">1</mode>
-          <gamma sid="blender_gamma" type="float">1</gamma>
-          <red sid="red" type="float">1</red>
-          <green sid="green" type="float">1</green>
-          <blue sid="blue" type="float">1</blue>
-          <shadow_r sid="blender_shadow_r" type="float">0</shadow_r>
-          <shadow_g sid="blender_shadow_g" type="float">0</shadow_g>
-          <shadow_b sid="blender_shadow_b" type="float">0</shadow_b>
-          <energy sid="blender_energy" type="float">2000</energy>
-          <dist sid="blender_dist" type="float">25</dist>
-          <spotsize sid="spotsize" type="float">45</spotsize>
-          <spotblend sid="spotblend" type="float">0.15</spotblend>
-          <att1 sid="att1" type="float">0</att1>
-          <att2 sid="att2" type="float">1</att2>
-          <falloff_type sid="falloff_type" type="int">2</falloff_type>
-          <clipsta sid="clipsta" type="float">0.04999995</clipsta>
-          <clipend sid="clipend" type="float">40</clipend>
-          <bias sid="bias" type="float">1</bias>
-          <soft sid="soft" type="float">3</soft>
-          <bufsize sid="bufsize" type="int">512</bufsize>
-          <samp sid="samp" type="int">3</samp>
-          <buffers sid="buffers" type="int">1</buffers>
-          <area_shape sid="area_shape" type="int">0</area_shape>
-          <area_size sid="area_size" type="float">0.25</area_size>
-          <area_sizey sid="area_sizey" type="float">0.25</area_sizey>
-          <area_sizez sid="area_sizez" type="float">0.25</area_sizez>
-        </technique>
-      </extra>
-    </light>
-  </library_lights>
   <library_effects>
     <effect id="マテリアル_005-effect">
       <profile_COMMON>
@@ -273,10 +229,6 @@
       <node id="カメラ" name="カメラ" type="NODE">
         <matrix sid="transform">0.420957 3.96498e-8 0.9070806 27.84736 0.9070806 -1.84006e-8 -0.420957 -12.3947 0 1 -4.37114e-8 6.621021 0 0 0 1</matrix>
         <instance_camera url="#カメラ-camera"/>
-      </node>
-      <node id="ポイント" name="ポイント" type="NODE">
-        <matrix sid="transform">1 0 0 8.63239 0 1 0 -2.69787 0 0 1 10.39577 0 0 0 1</matrix>
-        <instance_light url="#ポイント-light"/>
       </node>
       <node id="円柱_002" name="円柱.002" type="NODE">
         <matrix sid="transform">0.3449771 0.002862643 0.1039896 2.022918 0.009129839 0.01287405 -3.879483 3.212471 -0.003182347 0.3472545 0.14297 5.850348 0 0 0 1</matrix>
