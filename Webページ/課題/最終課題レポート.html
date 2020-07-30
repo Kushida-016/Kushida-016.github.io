@@ -1,0 +1,150 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:游明朝;
+	panose-1:2 2 4 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;}
+@font-face
+	{font-family:"\@游明朝";}
+@font-face
+	{font-family:"\@ＭＳ Ｐゴシック";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0mm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"游明朝",serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:0mm;
+	margin-left:42.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"游明朝",serif;}
+.MsoChpDefault
+	{font-family:"游明朝",serif;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 30.0mm 30.0mm 30.0mm;
+	layout-grid:18.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0mm;}
+ul
+	{margin-bottom:0mm;}
+-->
+</style>
+
+</head>
+<body style="background-image: url(../背景/b004.gif);"></body>
+<body lang=JA link=blue vlink="#954F72" style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:18.0pt'>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>初めに</p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:10.5pt'>今回は自分が乗っているバイクのマフラーを<span
+lang=EN-US>blender</span>で作成し、<span lang=EN-US>three.js</span>でモデルのデータを読み込んで<span
+lang=EN-US>Web</span>上に表示するという作業を行った。表示をする際にどのようなプラグラムを書いたのかについて述べる。</p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:10.5pt'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>2</span>．モデル作成　<span
+lang=EN-US>3DCG</span>モデルの作成をプログラムですべて行うこともできたが、せっかくなので少し形が複雑なものを作ろうと考え<span
+lang=EN-US>blender</span>を使用して乗っているバイクのマフラーを作成した。作成するイメージとしてグランツーリスモの車選択画面をイメージし、それのパーツ版を作成した。<span
+lang=EN-US><img width=567 height=199 id="図 1" src="最終課題レポート.files/image001.gif"
+alt="道路, 車, ケーキ, 座る が含まれている画像&#10;&#10;自動的に生成された説明"></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'>グラフィックを当時やっていたグランツーリスモ<span
+lang=EN-US>(</span>上画像<span lang=EN-US>)</span>に近づけてそれを高画質にしたかったのでテクスチャははっきりとした色の違いをつけた。</p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><img
+width=256 height=171 id="図 3" src="最終課題レポート.files/image002.jpg"
+alt="バイクのエンジン&#10;&#10;自動的に生成された説明"><img width=298 height=171 id="図 5"
+src="最終課題レポート.files/image003.png"></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+8.0pt'>ヒートグラデーションの境目をくっきりとした。ニンテンドー<span lang=EN-US>64</span>位のグラフィック。イメージに近くなった。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'>作成したモデルを<span lang=EN-US>dae</span>ファイルでエクスポートした。このファイルを<span
+lang=EN-US>three.js</span>で読み込む際には<span lang=EN-US>ColladaLoader.js</span>ファイルが必要なので事前に使用するファイルにダウンロードした。この読み込んだモデルを作成していた空間に入れることで<span
+lang=EN-US>Web</span>上に表示することが出来た。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='color:black;background:#FAFAFA'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>3.</span>カメラと光の制御</p>
+
+<p class=MsoNormal style='text-indent:10.5pt'>参考にしたコードのままだとカメラの初期位置が合っていないのと光の位置がよくなかったので変更した。</p>
+
+<p class=MsoNormal style='text-indent:10.5pt'><span lang=EN-US><img width=331
+height=186 id="図 2" src="最終課題レポート.files/image004.png"
+alt="ボール, モニター, テーブル, コンピュータ が含まれている画像&#10;&#10;自動的に生成された説明"></span>カメラの初期座標<span
+lang=EN-US>(0,10,10)</span>の状態。光の当たりも強すぎる。</p>
+
+<p class=MsoNormal><span lang=EN-US>3.1</span>　変更、調整</p>
+
+<p class=MsoNormal style='text-indent:10.5pt'>　少し位置が高かったので<span lang=EN-US>y</span>座標を<span
+lang=EN-US>8</span>に、中央に持っていきたかったので<span lang=EN-US>z</span>座標を<span
+lang=EN-US>0</span>、正面に回転させたいので<span lang=EN-US>x</span>座標を<span lang=EN-US>18</span>に調整することでカメラの初期位置をマフラーの正面に持っていくことが出来た。ライトが非常に強かった原因は<span
+lang=EN-US>blender</span>で作成した時点で光を設定していたところに更に光を当てていたことであったので平行光源を削除した。これらの作業をしたことによって<span
+lang=EN-US>Web</span>上で見やすくなった。</p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><img
+width=333 height=187 id="図 4" src="最終課題レポート.files/image005.png"></span><span
+style='font-size:10.5pt'>静かに光る感じをうまく作ることが出来た。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>4.</span>完成、制作を終えて</p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:10.5pt'>完成した<span
+lang=EN-US>3D</span>モデルをページに表示することが出来た<span lang=EN-US><a
+href="model/beams.html"><span style='background:#FAFAFA'>beams.html</span></a></span>。制作をしていく中で<span
+lang=EN-US>HTML</span>で<span lang=EN-US>3D</span>モデルを制作するための<span lang=EN-US>three.js</span>について学ぶことが出来た。<span
+lang=EN-US>3D</span>モデルの作成ではないが<span lang=EN-US>Web</span>ページの形態や作成方法についても学ぶことが出来た。反省点としてモデルを読み込んだ際の座標の調整がうまくいかずにカメラの初期座標を調整しなければならなかった事が挙げられる。全く分からなかった状態から調べ、エラーの内容を把握して資料を探して解決していくことの達成感と経験は今後に活かしていきたい。</p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>[</span>参考文献<span
+lang=EN-US>]</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>Three.js</span>入門サイト　<span
+lang=EN-US><a href="https://ics.media/tutorial-three/">https://ics.media/tutorial-three/</a></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>1</span>時間で作るホームページ：<span
+lang=EN-US>1</span>時間で<span lang=EN-US>HTML</span>を使ってホームページを作ろう！<span
+lang=EN-US><a href="http://www.shoshinsha.com/hp/1hour/1hour01.html">http://www.shoshinsha.com/hp/1hour/1hour01.html</a></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>CodeAid :Shift
+JIS</span>や<span lang=EN-US>EUC</span>などから<span lang=EN-US>UTF-8</span>へ変換する方法　<span
+lang=EN-US><a href="https://codeaid.jp/blog/exchange-utf8/">https://codeaid.jp/blog/exchange-utf8/</a></span></p><br><br>
+<a href="../../index.html">戻る</a>
+</div>
+
+</body>
+
+</html>
