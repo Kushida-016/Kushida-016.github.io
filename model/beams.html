@@ -38,7 +38,8 @@
         const controls = new THREE.OrbitControls(camera);
         controls.target.set(0, 3, 0);
         controls.update();
-
+        
+        
         
         // 環境光を追加
         const ambientLight = new THREE.AmbientLight(0x333333);
@@ -59,10 +60,12 @@
 
         // 毎フレーム時に実行されるループイベントです
         function tick() {
+
+          model.rotation.y += 0.01;
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(tick);
-        
+          
         }
       }
     </script>
